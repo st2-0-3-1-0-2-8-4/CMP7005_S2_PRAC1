@@ -12,10 +12,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
-# Set page configuration (MUST BE THE FIRST STREAMLIT COMMAND)
+# Set page configuration
 st.set_page_config(
     page_title="Air Quality Analysis",
-    page_icon="🌍",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -45,6 +44,31 @@ def general_info():
     st.subheader("Data Types")
     st.write(df.dtypes)
 
+    st.write(df.info())
+
+def missing_values_table(df):
+    # Total missing values
+    mis_val = df.isnull().sum()
+
+    # Percentage of missing values
+    mis_val_percent = 100 * df.isnull().sum() / len(df)
+    # Make a table with the results
+    mis_val_table = pd.concat([mis_val, mis_val_percent], axis=1)
+    #print(mis_val_table)
+    st.write(mis_val_table)
+    # Rename the columns
+    mis_val_table_ren_columns = mis_val_table.rename(
+    columns = {0 : 'Missing Values', 1 : '% of Total Values'})
+
+    # Sort the table by percentage of missing descending
+    mis_val_table_ren_columns = mis_val_table_ren_columns.sort_values('% of Total Values', ascending=False)
+    # Return the dataframe with missing information
+    return mis_val_table_ren_columns
+
+missing_values= missing_values_table(df)
+st.write(missing_values.style.background_gradient(cmap='Oranges'))
+
+
 # Main App
 def main():
     # Sidebar Navigation
@@ -63,7 +87,7 @@ def main():
 
     # Home Page
     if page == "Home":
-        st.title("🌍 Air Quality Analysis App")
+        st.title("Air Quality Analysis App")
         st.write("Welcome to the Air Quality Analysis App! This app allows you to explore air quality data and predict PM2.5 levels for the next day.")
         st.write("### Features:")
         st.write("- **General Data Information**: Overview of the dataset.")
@@ -74,7 +98,7 @@ def main():
         st.write("2. Explore the dataset and insights in the **General Data Information** and **EDA** pages.")
         st.write("3. Go to the **Model Building** page to predict PM2.5 for the next day.")
         st.write("---")
-        st.write("Made with ❤️ using Streamlit")
+        
 
     # General Data Information Page
     elif page == "General Data Information":
