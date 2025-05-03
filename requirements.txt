@@ -1,0 +1,7 @@
+keras
+numpy
+matplotlib
+pillow
+seaborn
+scikit-learn
+plotly
