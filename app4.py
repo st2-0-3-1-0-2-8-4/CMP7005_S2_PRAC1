@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn import preprocessing
 import warnings
 import plotly.graph_objects as go
 import plotly.express as px
