@@ -1,8 +1,0 @@
-keras
-numpy
-matplotlib
-pillow
-seaborn
-preprocessing
-warnings
-plotly
