@@ -1,0 +1,9 @@
+keras
+numpy
+matplotlib
+pillow
+seaborn
+sklearn
+preprocessing
+warnings
+plotly
