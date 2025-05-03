@@ -8,6 +8,10 @@ import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
 import scikitlearn
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
 
 # Set page configuration (MUST BE THE FIRST STREAMLIT COMMAND)
 st.set_page_config(
