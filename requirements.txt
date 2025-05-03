@@ -1,8 +1,0 @@
-keras
-numpy
-matplotlib
-pillow
-seaborn
-scikit-learn
-warnings
-plotly
