@@ -7,7 +7,7 @@ import warnings
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
-import scikit-learn
+import scikitlearn
 
 # Set page configuration (MUST BE THE FIRST STREAMLIT COMMAND)
 st.set_page_config(
