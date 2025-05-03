@@ -1,0 +1,7 @@
+keras
+numpy
+matplotlib
+pillow
+seaborn
+scikit-learn==1.3.2
+plotly
