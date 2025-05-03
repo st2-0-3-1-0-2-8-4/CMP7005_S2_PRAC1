@@ -7,7 +7,6 @@ import warnings
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
-import scikitlearn
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
