@@ -25,7 +25,7 @@ warnings.filterwarnings('ignore')
 # Load the dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv("city_day.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/st2-0-3-1-0-2-8-4/CMP7005_S2_PRAC1/refs/heads/main/city_day.csv")
     df['Date'] = pd.to_datetime(df['Date'], format='%d/%m/%Y')
     df['month'] = pd.DatetimeIndex(df['Date']).month
     df['Year'] = pd.DatetimeIndex(df['Date']).year
